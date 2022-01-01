@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "@components/ui/link";
 import { Category } from "src/types";
-
+import { MenuCateStyled } from "./style";
 interface Props {
   data: Category[];
+  className?: string;
 }
-const MenuCategory = ({ data }: Props) => {
+const MenuCategory = ({ data, className }: Props) => {
   if (!data) return null;
   const fakeData = [
     {
@@ -35,17 +36,13 @@ const MenuCategory = ({ data }: Props) => {
     },
   ];
   return (
-    <div className="menuCategory">
+    <MenuCateStyled className={className}>
       {fakeData.map((item) => (
-        <Link
-          key={item._id}
-          className=" block text-sm py-1.5 text-gray-700 font-semibold px-6 2xl:px-10 hover:text-heading hover:bg-gray-300"
-          href={item?.href}
-        >
+        <Link key={item._id} href={item?.href}>
           {item?.name}
         </Link>
       ))}
-    </div>
+    </MenuCateStyled>
   );
 };
 

@@ -1,8 +1,6 @@
 import { NextSeo } from "next-seo";
-import Header from "@components/layout/header/header";
+import Header from "@components/layout/header";
 import Footer from "@components/layout/footer/footer";
-
-//import Search from "@components/common/search";
 
 const Layout: React.FC = ({ children }) => (
   <div className="flex flex-col min-h-screen">
@@ -53,8 +51,6 @@ const Layout: React.FC = ({ children }) => (
       {children}
     </main>
     <Footer />
-
-    {/* <Search /> */}
   </div>
 );
 

@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "src/components/layout/layout";
+import { Layout } from "@components/index";
 import { callApi } from "@services/api";
 import { getCategories } from "@services/category";
-import { Category } from "@types";
+import { Category } from "@types/index";
 interface HomeProps {
   categories: Category[];
 }

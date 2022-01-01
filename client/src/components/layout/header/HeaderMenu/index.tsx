@@ -1,5 +1,6 @@
 import Link from "@components/ui/link";
 import MenuCategory from "@components/ui/MenuCategory";
+import { HeaderMenuStyled } from "./style";
 import { FaChevronDown } from "react-icons/fa";
 import { Category } from "src/types";
 interface MenuProps {
@@ -8,15 +9,13 @@ interface MenuProps {
 
 const HeaderMenu = ({ data }: MenuProps) => {
   return (
-    <nav>
-      <div>
-        <Link href="/">
+    <HeaderMenuStyled>
+      <div className="linkItem">
+        <Link className="linkItem__menuTitle" href="/">
           <span>Category</span>
-          <span>
-            <FaChevronDown />
-          </span>
+          <FaChevronDown />
         </Link>
-        <MenuCategory data={data} />
+        <MenuCategory className="linkItem__listMenu" data={data} />
       </div>
 
       <div>
@@ -24,7 +23,7 @@ const HeaderMenu = ({ data }: MenuProps) => {
           <span>Search</span>
         </Link>
       </div>
-    </nav>
+    </HeaderMenuStyled>
   );
 };
 
